@@ -11,10 +11,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>Document</title>
 </head>
+<style>
+    body{
+        background: #2d3748;
+    }
+</style>
 <body>
 <div class="col-12">
     <div class="text-center m-5">
-        <h1>Shopping Cart</h1>
+        <h1>ShoppingCart</h1>
         <form action="/create" method="post">
             @csrf
             <div class="row">

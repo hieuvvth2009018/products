@@ -11,6 +11,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>Document</title>
 </head>
+<style>
+    body{
+        background: aquamarine;
+    }
+</style>
 <body>
 <div class="container">
     <h2>List Product</h2>
@@ -41,7 +46,7 @@
                     {{$obj -> price}}
                 </td>
                 <td>
-                    <img src="{{$obj -> thumbnail}}" width="100px">
+                    <img src="{{$obj -> thumbnail}}" width="90px">
                 </td>
                 <td>
                     <a href="/add?productId={{$obj->id}}&productQuantity=1">
