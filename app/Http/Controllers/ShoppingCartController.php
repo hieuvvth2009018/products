@@ -16,8 +16,8 @@ class ShoppingCartController extends Controller
         $productId = $request->get('productId');
         $productQuantity = $request->get('productQuantity');
         $action = $request->get('cartAction');
-        $product = Products::find($productId);
-        if ($product == null){
+        $products = Products::find($productId);
+        if ($products == null){
             return view('404');
         }
         if (Session::has('shoppingCart')){
@@ -29,10 +29,10 @@ class ShoppingCartController extends Controller
         $cartItem = null;
         if (!array_key_exists($productId, $shoppingCart)){
             $cartItem = new \stdClass();
-            $cartItem->id = $product->id;
-            $cartItem->name = $product->name;
-            $cartItem->thumbnail = $product->thumbnail;
-            $cartItem->unitPrice = $product->price;
+            $cartItem->id = $products->id;
+            $cartItem->name = $products->name;
+            $cartItem->thumbnail = $products->thumbnail;
+            $cartItem->unitPrice = $products->price;
             $cartItem->quantity = intval($productQuantity);
         }else{
             $cartItem = $shoppingCart[$productId];
