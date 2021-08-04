@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\OrderDetail;
-use App\Models\Products;
+use App\Models\products;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -16,7 +16,7 @@ class ShoppingCartController extends Controller
         $productId = $request->get('productId');
         $productQuantity = $request->get('productQuantity');
         $action = $request->get('cartAction');
-        $products = Products::find($productId);
+        $products = products::find($productId);
         if ($products == null){
             return view('404');
         }
